@@ -116,17 +116,17 @@ export default function ClientCharacters({ translations }: { translations: Chara
                   {translations.shamanDesc}
                 </p>
                 <div className="grid grid-cols-3 max-w-[fit-content] gap-3 md:gap-4">
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/talisman.png" alt="부적" cols={6} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/purifying-water.png" alt="정화수" cols={1} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/jakdu.png" alt="작두" cols={3} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/dokkabi-fire.png" alt="도깨비불" cols={6} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/mocktak.png" alt="목탁" cols={6} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/wind.png" alt="부채바람" cols={12} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/talisman.png" alt="부적" cols={6} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/purifying-water.png" alt="정화수" cols={1} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/jakdu.png" alt="작두" cols={3} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/dokkabi-fire.png" alt="도깨비불" cols={6} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/mocktak.png" alt="목탁" cols={6} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/wind.png" alt="부채바람" cols={12} className={weaponClasses} />
                 </div>
               </div>
               <div className="flex-1 flex justify-center items-center py-10">
                 <CharacterSprite 
-                   src="https://cdn.tailbound.xyz/assets/player/shaman-idle-v2.png" 
+                   src="/assets/player/shaman-idle-v2.png"
                    alt="무당 스프라이트" 
                    cols={6} 
                    heightClass="h-40 md:h-56" 
@@ -153,17 +153,17 @@ export default function ClientCharacters({ translations }: { translations: Chara
                   {translations.reaperDesc}
                 </p>
                 <div className="grid grid-cols-3 max-w-[fit-content] gap-3 md:gap-4">
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/reaper/karma-scythe.png" alt="업보의 낫" cols={11} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/reaper/death-sword.png" alt="망자의 검" cols={11} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/reaper/spirit-bell.png" alt="명두방울" cols={10} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/reaper/chain-of-fate.png" alt="운명의 사슬" cols={10} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/reaper/river-styx.png" alt="삼도천" cols={14} className={weaponClasses} />
-                  <WeaponIcon src="https://cdn.tailbound.xyz/assets/weapon/reaper/gate-underworld.png" alt="지옥문" cols={7} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/reaper/karma-scythe.png" alt="업보의 낫" cols={11} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/reaper/death-sword.png" alt="망자의 검" cols={11} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/reaper/spirit-bell.png" alt="명두방울" cols={10} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/reaper/chain-of-fate.png" alt="운명의 사슬" cols={10} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/reaper/river-styx.png" alt="삼도천" cols={14} className={weaponClasses} />
+                  <WeaponIcon src="/assets/weapon/reaper/gate-underworld.png" alt="지옥문" cols={7} className={weaponClasses} />
                 </div>
               </div>
               <div className="flex-1 flex justify-center items-center py-10">
                 <CharacterSprite 
-                   src="https://cdn.tailbound.xyz/assets/player/reaper-idle-v2.png" 
+                   src="/assets/player/reaper-idle-new.png"
                    alt="저승사자 스프라이트" 
                    cols={6} 
                    heightClass="h-44 md:h-64" 

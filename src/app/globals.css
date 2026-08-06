@@ -9,11 +9,13 @@
   --bg-card: rgba(20, 20, 25, 0.6);
   --text-main: #EFEFEF;
   --text-muted: #A0A0A5;
+  --font-sans: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
   background-color: var(--bg-dark);
   color: var(--text-main);
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
@@ -67,7 +69,7 @@ body {
 }
 
 .red-moon {
-  background-image: url('https://cdn.tailbound.xyz/assets/scene/red-moon-common.png');
+  background-image: url('/assets/scene/red-moon-common.png');
   background-repeat: no-repeat;
   animation: play-redmoon 2.1s steps(21) infinite;
 }

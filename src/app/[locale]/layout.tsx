@@ -1,25 +1,12 @@
 import type { Metadata } from "next";
+import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { Noto_Sans_KR, Outfit } from 'next/font/google';
 import LoadingScreen from '@/components/LoadingScreen';
+import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 import "../globals.css";
-
-const notoSansKR = Noto_Sans_KR({
-  subsets: ['latin'],
-  weight: ['300', '400', '700', '900'],
-  display: 'swap',
-  variable: '--font-noto-sans-kr',
-});
-
-const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  display: 'swap',
-  variable: '--font-outfit',
-});
 
 const seoByLocale = {
   ko: {
@@ -114,14 +101,19 @@ export default async function LocaleLayout({
   const wordBreakClass = locale === 'ko' ? 'break-keep' : 'break-normal';
 
   return (
-    <html lang={locale} className={`${notoSansKR.variable} ${outfit.variable}`}>
+    <html lang={locale}>
       <head>
-        <link rel="preconnect" href="https://cdn.tailbound.xyz" />
-        <link rel="dns-prefetch" href="https://cdn.tailbound.xyz" />
         <link rel="preload" href="/poster.webp" as="image" fetchPriority="high" />
         <link rel="preload" href="/title.png" as="image" />
       </head>
-      <body className={`antialiased font-sans ${wordBreakClass}`} style={{ fontFamily: 'var(--font-noto-sans-kr), sans-serif' }}>
+      <body className={`antialiased font-sans ${wordBreakClass}`}>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+        </Script>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <LoadingScreen />
           {children}

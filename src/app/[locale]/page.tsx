@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import StoreLink from '@/components/StoreLink';
 
 const ClientCharacters = dynamic(() => import('@/components/ClientCharacters'), {
   loading: () => <div className="min-h-[450px]" />,
@@ -118,14 +119,14 @@ export default async function Page({
             <li><a href="#characters" className="hover:text-[#E39F54] transition-colors">{t('Nav.characters')}</a></li>
           </ul>
           <div className="flex items-center gap-2 lg:gap-3">
-            <a href="https://apps.apple.com/app/id6754251416" target="_blank" rel="noopener noreferrer" className="hidden md:flex bg-transparent border border-[#E39F54] text-[#E39F54] px-5 py-2 rounded-full font-bold transition-all hover:bg-[#E39F54] hover:text-[#0A0A0C] hover:shadow-[0_0_15px_rgba(227,159,84,0.4)] items-center gap-2">
+            <StoreLink store="app_store" placement="navigation" locale={locale} className="hidden md:flex bg-transparent border border-[#E39F54] text-[#E39F54] px-5 py-2 rounded-full font-bold transition-all hover:bg-[#E39F54] hover:text-[#0A0A0C] hover:shadow-[0_0_15px_rgba(227,159,84,0.4)] items-center gap-2">
               <svg viewBox="0 0 384 512" width="16" height="16" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7-56.1 0-112.5 45.4-112.5 125.8 0 78.4 46.8 152 82.5 214.2 16.4 28.5 43.1 63.3 75.3 64.6 28.5 1.3 43-16.7 82.5-16.7 39.5 0 51.5 16.7 82.5 15.6 33.7-1.3 56.4-33.5 72.8-63.3 11.2-22.3 23-53 23-53-48.5-20.3-64.8-67.6-62.5-104.9zM258.9 98.6c18.8-22.3 28.5-54 28.5-84.8-30.8 2.2-64.8 17.5-86.8 40.5-18.8 19.3-30.8 49.9-30.8 81.1 27.5 1.8 61.5-16.7 89.1-36.8z"/></svg>
               <span>{t('Common.appStore')}</span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.oxkkun.tailbound" target="_blank" rel="noopener noreferrer" className="hidden md:flex bg-transparent border border-[#E39F54] text-[#E39F54] px-5 py-2 rounded-full font-bold transition-all hover:bg-[#E39F54] hover:text-[#0A0A0C] hover:shadow-[0_0_15px_rgba(227,159,84,0.4)] items-center gap-2">
+            </StoreLink>
+            <StoreLink store="google_play" placement="navigation" locale={locale} className="hidden md:flex bg-transparent border border-[#E39F54] text-[#E39F54] px-5 py-2 rounded-full font-bold transition-all hover:bg-[#E39F54] hover:text-[#0A0A0C] hover:shadow-[0_0_15px_rgba(227,159,84,0.4)] items-center gap-2">
               <svg viewBox="0 0 512 512" width="16" height="16" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
               <span>{t('Common.googlePlay')}</span>
-            </a>
+            </StoreLink>
             <LanguageSwitcher />
           </div>
         </div>
@@ -144,14 +145,14 @@ export default async function Page({
             </h1>
             <p className="text-base lg:text-xl text-[#A0A0A5] max-w-lg mb-6 lg:mb-10" dangerouslySetInnerHTML={{ __html: t('Hero.subtitle') }}></p>
             <div className="flex flex-wrap gap-3 lg:gap-4">
-              <a href="https://apps.apple.com/app/id6754251416" target="_blank" rel="noopener noreferrer" className="bg-black/40 text-[#EFEFEF] border border-white/10 px-6 py-3 lg:px-8 lg:py-4 rounded-lg text-base lg:text-lg font-semibold flex items-center gap-2 lg:gap-3 transition-all hover:-translate-y-1 hover:border-[#E39F54] hover:text-[#E39F54] hover:shadow-[0_8px_30px_rgba(227,159,84,0.18)]">
+              <StoreLink store="app_store" placement="hero" locale={locale} className="bg-black/40 text-[#EFEFEF] border border-white/10 px-6 py-3 lg:px-8 lg:py-4 rounded-lg text-base lg:text-lg font-semibold flex items-center gap-2 lg:gap-3 transition-all hover:-translate-y-1 hover:border-[#E39F54] hover:text-[#E39F54] hover:shadow-[0_8px_30px_rgba(227,159,84,0.18)]">
                 <svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7-56.1 0-112.5 45.4-112.5 125.8 0 78.4 46.8 152 82.5 214.2 16.4 28.5 43.1 63.3 75.3 64.6 28.5 1.3 43-16.7 82.5-16.7 39.5 0 51.5 16.7 82.5 15.6 33.7-1.3 56.4-33.5 72.8-63.3 11.2-22.3 23-53 23-53-48.5-20.3-64.8-67.6-62.5-104.9zM258.9 98.6c18.8-22.3 28.5-54 28.5-84.8-30.8 2.2-64.8 17.5-86.8 40.5-18.8 19.3-30.8 49.9-30.8 81.1 27.5 1.8 61.5-16.7 89.1-36.8z"/></svg>
                 <span>{t('Common.appStore')}</span>
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.oxkkun.tailbound" target="_blank" rel="noopener noreferrer" className="bg-black/40 text-[#EFEFEF] border border-white/10 px-6 py-3 lg:px-8 lg:py-4 rounded-lg text-base lg:text-lg font-semibold flex items-center gap-2 lg:gap-3 transition-all hover:-translate-y-1 hover:border-[#E39F54] hover:text-[#E39F54] hover:shadow-[0_8px_30px_rgba(227,159,84,0.18)]">
+              </StoreLink>
+              <StoreLink store="google_play" placement="hero" locale={locale} className="bg-black/40 text-[#EFEFEF] border border-white/10 px-6 py-3 lg:px-8 lg:py-4 rounded-lg text-base lg:text-lg font-semibold flex items-center gap-2 lg:gap-3 transition-all hover:-translate-y-1 hover:border-[#E39F54] hover:text-[#E39F54] hover:shadow-[0_8px_30px_rgba(227,159,84,0.18)]">
                 <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
                 <span>{t('Common.googlePlay')}</span>
-              </a>
+              </StoreLink>
             </div>
           </div>
           {/* Main Gameplay / Video Container */}
@@ -173,7 +174,7 @@ export default async function Page({
               {/* Logo / Title Overlay — desktop only */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent hidden lg:flex flex-col justify-end p-6 md:p-10 pointer-events-none">
                 <div className="flex items-center gap-3 mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
-                  <img src="https://cdn.tailbound.xyz/assets/gui/shaman-signature.png" width={48} height={48} className="w-8 h-8 md:w-12 md:h-12 pixel-art" alt="Logo" />
+                  <img src="/assets/gui/shaman-signature.png" width={48} height={48} className="w-8 h-8 md:w-12 md:h-12 pixel-art" alt="Logo" />
                   <h3 className="text-2xl md:text-3xl font-black text-[#EFEFEF] drop-shadow-md">{t('Common.logoText')} <span className="text-[#E39F54]">{t('Common.logoSub')}</span></h3>
                 </div>
                 <p className="text-[#A0A0A5] text-sm md:text-base font-light text-shadow-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 opacity-0 group-hover:opacity-100">
@@ -231,9 +232,9 @@ export default async function Page({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-               { icon: "https://cdn.tailbound.xyz/assets/gui/hell.png", key: "item1" },
-               { icon: "https://cdn.tailbound.xyz/assets/gui/shaman-signature.png", key: "item2" },
-               { icon: "https://cdn.tailbound.xyz/assets/artifacts/crown-of-silla.png", key: "item3" }
+               { icon: "/assets/gui/hell.png", key: "item1" },
+               { icon: "/assets/gui/shaman-signature.png", key: "item2" },
+               { icon: "/assets/artifacts/crown-of-silla.png", key: "item3" }
             ].map((f, i) => (
               <div key={i} className="glass-panel group p-10 flex flex-col justify-start text-left">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#E39F54]/20 to-[#902621]/20 rounded-xl flex items-center justify-center mb-6 border border-[#E39F54]/30 group-hover:scale-110 transition-transform">
