@@ -14,11 +14,11 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 10.28.2
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
@@ -29,5 +29,11 @@ jobs:
       - name: Type Check
         run: pnpm type-check
 
-      - name: Build
-        run: pnpm build
+      - name: Analytics tests
+        run: pnpm test
+
+      - name: Cloudflare build
+        run: pnpm cf:build
+
+      - name: Cloudflare runtime checks
+        run: pnpm cf:verify
