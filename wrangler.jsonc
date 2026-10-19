@@ -21,5 +21,11 @@
   ],
   "observability": {
     "enabled": true
-  }
+  },
+  "routes": [
+    {
+      "pattern": "tailbound.xyz/*",
+      "zone_id": "21ba1c5d3bb642ee2b1a541514a85de9"
+    }
+  ]
 }
