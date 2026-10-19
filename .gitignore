@@ -42,3 +42,8 @@ next-env.d.ts
 public/preview-original.mp4
 .env*.local
 .gstack/
+
+# Cloudflare build and local runtime
+.open-next/
+.wrangler/
+.dev.vars*
